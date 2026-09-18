@@ -1,0 +1,20 @@
+{
+  "name": "gertners.dev",
+  "version": "0.0.0",
+  "description": "The personal website of Arvids Gertners",
+  "homepage": "https://github.com/ArvidsGertners/gertners.dev#readme",
+  "bugs": {
+    "url": "https://github.com/ArvidsGertners/gertners.dev/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArvidsGertners/gertners.dev.git"
+  },
+  "license": "ISC",
+  "author": "Arvids Gertners",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
