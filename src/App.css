@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;   /* only your colors exist */
+  --shadow-*: initial;  /* only your shadows exist */
+  
+  /* Colors → bg-ink, text-paper, border-accent... */
+  --color-ink: #000000;
+  --color-paper: #fffdf5;
+  --color-accent: #ff6b35;
+  --color-highlight: #ffd23f;
+
+  /* Fonts → font-display, font-body */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Type scale → text-sm, text-h1... (size + line-height pair) */
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.4;
+  --text-body: 1rem;
+  --text-h2: 2rem;
+  --text-h1: 3.5rem;
+  --text-h1--line-height: 1.05;
+
+  /* Spacing base: p-1 = 4px, p-4 = 16px... match your Figma grid */
+  --spacing: 4px;
+
+  /* Radius, including sharp corners if your design uses them */
+  --radius-none: 0;
+  --radius-sm: 4px;
+
+  /* Neubrutalist hard shadows → shadow-brutal */
+  --shadow-brutal: 4px 4px 0 0 var(--color-ink);
+  --shadow-brutal-lg: 8px 8px 0 0 var(--color-ink);
+
+  /* Breakpoints → sm:, md:, lg: */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+}
