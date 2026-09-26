@@ -1,6 +1,7 @@
-import { NavBar } from "./components/NavBar.jsx";
+import { NavBar } from "./components/navbar/NavBar.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./Home.jsx";
 
 export const App = () => {
   return (
@@ -8,7 +9,7 @@ export const App = () => {
       <div>
         <NavBar />
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<h1>About</h1>} />
           <Route path="/projects" element={<h1>Projects</h1>} />
           <Route path="/writing" element={<h1>Writing</h1>} />

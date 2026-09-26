@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { ButtonSecondary } from "./ButtonSecondary";
-import { ButtonPrimary } from "./ButtonPrimary";
+import { ButtonSecondary } from "../ButtonSecondary";
+import { ButtonPrimary } from "../ButtonPrimary";
 
 import { ButtonNav } from "./ButtonNav";
 import { Squash as Hamburger } from "hamburger-react";
@@ -32,8 +32,8 @@ export const NavBar = () => {
 
   return (
     <nav className="relative z-50 bg-paper border-b-3 border-ink">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-24">
+      <div className="">
+        <div className="flex items-center justify-between py-6 p-12 lg:px-24 ">
           <div className="shrink-0">
             <Link
               to="/"
