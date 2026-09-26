@@ -65,15 +65,9 @@ export const NavBar = () => {
       </div>
       <Drawer.Root open={isOpen} onOpenChange={setIsOpen} swipeDirection="up">
         <Drawer.Portal>
-          <Drawer.Backdrop
-            className="fixed inset-x-0 bottom-0 top-24.75 bg-ink/40
-                 opacity-[calc(1-var(--drawer-swipe-progress))]
-                 transition-opacity duration-300
-                 data-starting-style:opacity-0 data-ending-style:opacity-0 data-swiping:duration-0"
-          />
           <Drawer.Viewport className="fixed inset-x-0 bottom-0 top-24.75 flex flex-col">
             <Drawer.Popup
-              className="w-full bg-paper border-b-3 border-ink px-4 py-8 outline-none
+              className="flex-1 w-full overflow-y-auto overscroll-contain bg-paper border-ink px-4 py-8 outline-none
                    transform-[translateY(var(--drawer-swipe-movement-y))]
                    transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]
                    data-starting-style:transform-[translateY(-100%)]
