@@ -1,9 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { ButtonSecondary } from "./ButtonSecondary";
+import { ButtonPrimary } from "./ButtonPrimary";
+
 import { ButtonNav } from "./ButtonNav";
 import { Squash as Hamburger } from "hamburger-react";
 import { Drawer } from "@base-ui/react/drawer";
+import { DrawerItem } from "./DrawerItem";
 
 const links = [
   { to: "/about", label: "about" },
@@ -77,15 +80,29 @@ export const NavBar = () => {
                    data-ending-style:transform-[translateY(-100%)]
                    data-swiping:select-none"
             >
-              <Drawer.Content>
+              <Drawer.Content className="flex flex-col">
                 <Drawer.Title className="sr-only">Menu</Drawer.Title>
-                <div className="flex flex-col items-start gap-6 uppercase text-label font-mono">
-                  {links.map((l) => (
-                    <ButtonNav key={l.to} to={l.to}>
-                      {l.label}
-                    </ButtonNav>
-                  ))}
-                  <ButtonSecondary to="/contact">Say Hi</ButtonSecondary>
+                {[...links].map((l, i) => (
+                  <DrawerItem key={l.to} to={l.to} index={i + 1}>
+                    {l.label.charAt(0).toUpperCase() + l.label.slice(1)}
+                  </DrawerItem>
+                ))}
+                <div className="mt-8 flex flex-col">
+                  <ButtonPrimary to="/contact">
+                    <span>say hi</span>
+                    <svg
+                      className="ml-auto h-4 w-4 shrink-0 transition-transform duration-200
+                   group-hover:translate-x-1 motion-reduce:transition-none"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="square"
+                      aria-hidden="true"
+                    >
+                      <path d="M3 12h17M13 5l7 7-7 7" />
+                    </svg>
+                  </ButtonPrimary>
                 </div>
               </Drawer.Content>
             </Drawer.Popup>
