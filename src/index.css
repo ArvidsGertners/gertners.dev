@@ -6,6 +6,7 @@
 
   /* Colors → bg-ink, text-paper, border-accent... */
   --color-ink: #000000;
+  --color-ink-muted: #4a4a4a;
   --color-paper: #fffdf5;
   --color-white: #ffffff;
   --color-accent: #ff6b35;

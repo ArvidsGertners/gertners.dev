@@ -1,4 +1,4 @@
-import { IllustrationSlot } from "./IllustrationSlot";
+import { IllustrationSlot } from "../../../ui/IllustrationSlot";
 import { TagLabel } from "../../../ui/TagLabel";
 
 const STATUS_COLORS = {
@@ -9,7 +9,7 @@ const STATUS_COLORS = {
 export const ProjectCard = ({ title, status, description, stack, links }) => {
   return (
     <article className="flex flex-col items-start border-[3px] bg-white shadow-brutal-lg">
-      <IllustrationSlot />
+      <IllustrationSlot className="h-60" />
       <div className="flex flex-col items-start gap-4 self-stretch p-8">
         <div className="flex items-center justify-between self-stretch">
           <h3 className="text-ink font-display text-heading-xl">{title}</h3>

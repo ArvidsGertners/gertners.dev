@@ -4,6 +4,7 @@ import { Projects } from "../components/home/sections/projects/Projects";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { ProjectCard } from "../components/home/sections/projects/ProjectCard";
 import { TagLabel } from "../components/ui/TagLabel";
+import { Writing } from "../components/home/sections/writing/Writing";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
         <NowStrip />
       </div>
       <Projects />
+      <Writing />
     </>
   );
 };
