@@ -1,6 +1,6 @@
-import { ButtonPrimary } from "../ButtonPrimary";
-import { ButtonSecondary } from "../ButtonSecondary";
-import { Tag } from "../Tag";
+import { ButtonPrimary } from "../ui/ButtonPrimary";
+import { ButtonSecondary } from "../ui/ButtonSecondary";
+import { Tag } from "../ui/Tag";
 
 export const HeroItem = () => {
   return (

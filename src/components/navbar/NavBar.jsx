@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { ButtonSecondary } from "../ButtonSecondary";
-import { ButtonPrimary } from "../ButtonPrimary";
+import { ButtonSecondary } from "../ui/ButtonSecondary";
+import { ButtonPrimary } from "../ui/ButtonPrimary";
 
 import { ButtonNav } from "./ButtonNav";
 import { Squash as Hamburger } from "hamburger-react";
@@ -31,9 +31,9 @@ export const NavBar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="relative z-50 bg-paper border-b-3 border-ink">
-      <div className="">
-        <div className="flex items-center justify-between py-6 p-12 lg:px-24 ">
+    <nav className="relative z-50 h-nav bg-paper border-b-3 border-ink">
+      <div className="h-full">
+        <div className="flex h-full items-center justify-between py-6 p-12 lg:px-24 ">
           <div className="shrink-0">
             <Link
               to="/"
@@ -65,7 +65,7 @@ export const NavBar = () => {
       </div>
       <Drawer.Root open={isOpen} onOpenChange={setIsOpen} swipeDirection="up">
         <Drawer.Portal>
-          <Drawer.Viewport className="fixed inset-x-0 bottom-0 top-24.75 flex flex-col">
+          <Drawer.Viewport className="fixed inset-x-0 bottom-0 top-nav flex flex-col">
             <Drawer.Popup
               className="flex-1 w-full overflow-y-auto overscroll-contain bg-paper border-ink px-4 py-8 outline-none
                    transform-[translateY(var(--drawer-swipe-movement-y))]

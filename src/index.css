@@ -13,6 +13,7 @@
 
   /* Spacing base: p-1 = 4px, p-4 = 16px... match your Figma grid */
   --spacing: 4px;
+  --spacing-nav: 96px;
 
   /* Radius, including sharp corners if your design uses them */
   --radius-none: 0;
