@@ -5,6 +5,7 @@ import { SectionHeader } from "../components/ui/SectionHeader";
 import { ProjectCard } from "../components/home/sections/projects/ProjectCard";
 import { TagLabel } from "../components/ui/TagLabel";
 import { Writing } from "../components/home/sections/writing/Writing";
+import { About } from "../components/home/sections/about/About";
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
       </div>
       <Projects />
       <Writing />
+      <About />
     </>
   );
 };
