@@ -7,7 +7,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-start gap-12 self-stretch p-24 bg-paper"
+      className="flex flex-col items-start gap-12 self-stretch p-6 md:p-12 lg:p-24 bg-paper"
     >
       <SectionHeader eyebrow="01 - Projects" title="Things I'm Building" />
       <div className="grid grid-cols-1 gap-8 self-stretch lg:grid-cols-2">
