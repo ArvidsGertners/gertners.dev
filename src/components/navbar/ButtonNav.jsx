@@ -1,6 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const ButtonNav = ({ to, children, ...props }) => {
+  // Links are same-page anchors ("/#about"), so NavLink would mark all of them
+  // active on "/". Compare the hash instead.
+  const { pathname, hash } = useLocation();
+  const isActive = `${pathname}${hash}` === to;
+
   // Box is always there (transparent) so hover never changes the layout.
   // -mx cancels px-6 + border-3 so the text lines up like a plain link.
   const base =
@@ -13,9 +18,9 @@ export const ButtonNav = ({ to, children, ...props }) => {
     "transition-[translate,box-shadow,background-color] duration-75 ease-in-out motion-reduce:transition-none";
 
   return (
-    <NavLink
+    <Link
       to={to}
-      className={({ isActive }) =>
+      className={
         isActive
           ? `${base} ${motion} border-ink bg-accent shadow-brutal`
           : `${base} ${motion} ${interactive}`
@@ -23,6 +28,6 @@ export const ButtonNav = ({ to, children, ...props }) => {
       {...props}
     >
       {children}
-    </NavLink>
+    </Link>
   );
 };

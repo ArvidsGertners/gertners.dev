@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import { IllustrationSlot } from "../../../ui/IllustrationSlot";
 import { TagLabel } from "../../../ui/TagLabel";
 
@@ -6,12 +7,24 @@ const STATUS_COLORS = {
   // shipped: "...", paused: "...",
 };
 
-export const ProjectCard = ({ title, status, description, stack, links }) => {
+export const ProjectCard = ({
+  title,
+  status,
+  description,
+  stack,
+  links,
+  className,
+}) => {
   return (
-    <article className="flex flex-col items-start border-[3px] bg-white shadow-brutal-lg">
+    <article
+      className={twMerge(
+        "flex flex-col items-start border-[3px] bg-white shadow-brutal-lg",
+        className,
+      )}
+    >
       <IllustrationSlot className="h-60" />
       <div className="flex flex-col items-start gap-4 self-stretch p-8">
-        <div className="flex items-center justify-between self-stretch">
+        <div className="flex items-center justify-between gap-3 self-stretch">
           <h3 className="text-ink font-display text-heading-xl">{title}</h3>
           <TagLabel color={STATUS_COLORS[status]}>{status}</TagLabel>
         </div>

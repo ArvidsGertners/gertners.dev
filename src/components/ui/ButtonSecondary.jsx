@@ -1,13 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 
 export const ButtonSecondary = ({
   to,
+  href,
   type = "button",
+  className,
   children,
   ...props
 }) => {
   const base =
-    "inline-block font-mono text-label uppercase text-ink border-3 border-ink px-6 py-3 shadow-brutal";
+    "inline-flex items-center justify-between gap-4 whitespace-nowrap font-mono text-label uppercase text-ink border-3 border-ink px-6 py-3 shadow-brutal";
 
   const interactive =
     "hover:-translate-0.5 hover:shadow-brutal-lg hover:bg-highlight";
@@ -15,14 +18,27 @@ export const ButtonSecondary = ({
   const motion =
     "transition-[translate,box-shadow,background-color] duration-75 ease-in-out motion-reduce:transition-none";
 
+  // NavLink treats "/#contact" as active on every "/" page, so hash links
+  // get no active state.
+  if (to?.includes("#")) {
+    return (
+      <Link
+        to={to}
+        className={twMerge(base, motion, "bg-white", interactive, className)}
+        {...props}
+      >
+        {children}
+      </Link>
+    );
+  }
   if (to) {
     return (
       <NavLink
         to={to}
         className={({ isActive }) =>
           isActive
-            ? `${base} ${motion} bg-accent`
-            : `${base} ${motion} ${interactive} bg-white`
+            ? twMerge(base, motion, "bg-accent", className)
+            : twMerge(base, motion, "bg-white", interactive, className)
         }
         {...props}
       >
@@ -30,15 +46,24 @@ export const ButtonSecondary = ({
       </NavLink>
     );
   }
-  return (
-    <>
-      <button
-        type={type}
-        className={`${base} ${interactive} bg-paper`}
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={twMerge(base, motion, "bg-white", interactive, className)}
         {...props}
       >
         {children}
-      </button>
-    </>
+      </a>
+    );
+  }
+  return (
+    <button
+      type={type}
+      className={twMerge(base, motion, "bg-paper", interactive, className)}
+      {...props}
+    >
+      {children}
+    </button>
   );
 };

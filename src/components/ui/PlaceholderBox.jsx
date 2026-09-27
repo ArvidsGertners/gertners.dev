@@ -1,5 +1,5 @@
 export const PlaceholderBox = () => {
   return (
-    <div className="flex w-130 h-105 p-6 flex-col justify-center items-center gap-4 border-4 bg-highlight shadow-brutal-lg"></div>
+    <div className="flex h-55 w-full flex-col items-center justify-center gap-4 border-3 bg-highlight p-6 shadow-brutal-lg md:h-105"></div>
   );
 };

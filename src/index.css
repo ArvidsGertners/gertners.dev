@@ -14,7 +14,11 @@
 
   /* Spacing base: p-1 = 4px, p-4 = 16px... match your Figma grid */
   --spacing: 4px;
-  --spacing-nav: 96px;
+  --spacing-nav: 75px; /* Figma mobile nav = 75, desktop = 95 */
+  --spacing-gutter: 24px;
+  --spacing-section: 64px;
+  --spacing-section-gap: 32px;
+  --spacing-hero: 48px;
 
   /* Radius, including sharp corners if your design uses them */
   --radius-none: 0;
@@ -24,10 +28,9 @@
   --shadow-brutal: 4px 4px 0 0 var(--color-ink);
   --shadow-brutal-lg: 8px 8px 0 0 var(--color-ink);
 
-  /* Breakpoints → sm:, md:, lg: */
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
+  /* One breakpoint, mobile-first → md: */
+  --breakpoint-*: initial;
+  --breakpoint-md: 56.25rem; /* 900px */
 
   --font-display: "Space Grotesk Variable", sans-serif;
   --font-body: "Inter Variable", sans-serif;
@@ -93,8 +96,18 @@
 }
 
 @layer base {
+  @media (width >= 56.25rem) {
+    :root {
+      --spacing-nav: 96px;
+      --spacing-gutter: 96px;
+      --spacing-section: 96px;
+      --spacing-section-gap: 48px;
+      --spacing-hero: 96px;
+    }
+  }
   body {
     font-family: var(--font-body);
+    background-color: var(--color-paper);
   }
 
   h1,
