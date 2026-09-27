@@ -1,5 +1,5 @@
 import { HeroItem } from "./HeroItem";
-import { PlaceholderBox } from "../ui/PlaceholderBox";
+import { PlaceholderBox } from "../../../ui/PlaceholderBox";
 
 export const Hero = () => {
   return (

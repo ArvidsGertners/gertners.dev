@@ -5,7 +5,7 @@ const colors = {
   white: "bg-white",
 };
 
-export const Tag = ({ children, color = "white", ...props }) => {
+export const TagLabel = ({ children, color = "white", ...props }) => {
   return (
     <div
       className={`inline-flex py-1 px-2 items-center border-[3px] border-ink ${colors[color]} shadow-brutal hover:rotate-2 transition-all ease-in-out`}
