@@ -13,7 +13,7 @@ export const About = () => {
         title={`A bit of everything, on purpose`}
       ></SectionHeader>
       <div className="flex flex-col items-start gap-8 self-stretch md:flex-row md:gap-12">
-        <IllustrationSlot className="h-60 w-full border-[3px] md:h-120 md:w-2/5 md:max-w-100 md:shrink-0 md:rotate-2 md:self-start" />
+        <IllustrationSlot className="h-60 w-full shadow-brutal-lg border-[3px] md:h-120 md:w-2/5 md:max-w-100 md:shrink-0 md:rotate-2 md:self-start" />
         <div className="flex flex-col items-start gap-6 self-stretch md:grow md:basis-0">
           {/* Mobile gets one shortened paragraph instead of the three below. */}
           <p className="text-body-m font-body font-normal md:hidden">

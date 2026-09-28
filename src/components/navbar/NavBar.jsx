@@ -12,9 +12,9 @@ import { DrawerItem } from "./DrawerItem";
 
 // "Say hi" is the contact link, so contact isn't listed here.
 const links = [
-  { to: "/#about", label: "about" },
-  { to: "/#projects", label: "projects" },
-  { to: "/#writing", label: "writing" },
+  { to: "/about", label: "about" },
+  { to: "/projects", label: "projects" },
+  { to: "/writing", label: "writing" },
 ];
 
 export const NavBar = () => {
@@ -88,7 +88,9 @@ export const NavBar = () => {
         <Drawer.Portal>
           <Drawer.Viewport className="fixed inset-x-0 bottom-0 top-nav flex flex-col">
             <Drawer.Popup
-              finalFocus={() => burgerRef.current?.querySelector('[role="button"]')}
+              finalFocus={() =>
+                burgerRef.current?.querySelector('[role="button"]')
+              }
               className="flex-1 w-full overflow-y-auto overscroll-contain bg-paper border-ink px-gutter py-8 outline-none
                    transform-[translateY(var(--drawer-swipe-movement-y))]
                    transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]
@@ -114,7 +116,10 @@ export const NavBar = () => {
                   </DrawerItem>
                 ))}
                 <div className="mt-8 flex flex-col gap-3">
-                  <ButtonPrimary to="/#contact" onClick={(e) => goTo(e, "/#contact")}>
+                  <ButtonPrimary
+                    to="/#contact"
+                    onClick={(e) => goTo(e, "/#contact")}
+                  >
                     <span>say hi</span>
                     <ArrowIcon />
                   </ButtonPrimary>
